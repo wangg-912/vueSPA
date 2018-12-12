@@ -38,7 +38,13 @@ module.exports = {
         port: 5678, // 端口号
         https: false, // https:{type:Boolean}
         open: true, //配置自动启动浏览器
-        // proxy: 'http://localhost:4000' // 配置跨域处理,只有一个代理
+        proxy: { // 配置跨域处理
+            '/test': {
+                target: 'http://192.168.2.25:8090',
+                ws: true,
+                changeOrigin: true
+            }
+        }
     }
 
 };

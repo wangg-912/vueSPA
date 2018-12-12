@@ -14,7 +14,7 @@ export default {
   methods: {
     testApi() {
       this.$axios
-        .get("https://api.github.com/repos/octokit/octokit.rb")
+        .get("/platform/common/item/tree/gugu")
         .then(function(res) {
           debugger;
         })
