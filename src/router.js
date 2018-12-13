@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // 引入 Home 组件
-const Home = () => import('./views/Home.vue');
+const Home = () => import('@v/Home.vue');
 
 // 引入 About 组件
-const About = () => import('./views/About.vue');
+const About = () => import('@v/About.vue');
 
 Vue.use(Router)
 

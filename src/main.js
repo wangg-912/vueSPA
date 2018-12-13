@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import './axios/api'
+import '@x/api'
 Vue.config.productionTip = false
 
 // 如果是非线上环境，加载 VConsole

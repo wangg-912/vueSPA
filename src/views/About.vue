@@ -14,10 +14,8 @@ export default {
   methods: {
     testApi() {
       this.$axios
-        .get("/platform/common/item/tree/gugu")
-        .then(function(res) {
-          debugger;
-        })
+        .get("/api/xx")
+        .then(function(res) {})
         .catch(function(err) {});
     }
   }
