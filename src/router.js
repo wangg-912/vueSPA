@@ -8,18 +8,31 @@ const About = () => import('@v/About.vue');
 
 Vue.use(Router)
 
-let base = `${process.env.BASE_URL}` // 动态获取二级目录
-
-export default new Router({
+let router = new Router({
   mode: 'history',
-  base: base,
   routes: [{
     path: '/',
     name: 'home',
-    component: Home
+    component: Home,
+    meta: {
+      title: '首页'
+    }
   }, {
     path: '/about',
     name: 'about',
-    component: About
+    component: About,
+    meta: {
+      title: '关于我们'
+    }
   }]
 })
+router.beforeEach((to, from, next) => {
+  let title = to.meta && to.meta.title;
+  if (title) {
+    document.title = title; // 设置页面 title
+  }
+  (!to.name) ? next({
+    name: 'home'
+  }): next();
+})
+export default router

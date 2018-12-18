@@ -10,7 +10,8 @@ module.exports = {
     // 部署生产环境和开发环境下的URL。 默认情况下，Vue CLI 会假设你的应用是被部署在一个域名的根路径上 例如
     // https://www.my-app.com/。如果应用被部署在一个子路径上，你就需要用这个选项指定这个子路径。例如，如果你的应用被部署在
     // https://www.my-app.com/my-app/，则设置 baseUrl 为 /my-app/。
-    baseUrl: process.env.NODE_ENV === "production" ? "./" : "/",
+    baseUrl: process.env.NODE_ENV === "production" ?
+        "./" : "/",
     // outputDir: 在npm run build 或 yarn build 时 ，生成文件的目录名称（要和baseUrl的生产环境路径一致）
     outputDir: "dist",
     //用于放置生成的静态资源 (js、css、img、fonts) 的；（项目打包之后，静态资源会放在这个文件夹下）
@@ -34,30 +35,30 @@ module.exports = {
      * */
     productionSourceMap: false,
     chainWebpack: (config) => {
-        config.resolve.alias
+        config
+            .resolve
+            .alias
+            .set('@', resolve('src'))
             .set('@x', resolve('src/axios'))
             .set('@@', resolve('src/components')) // key,value自行定义，比如.set('@@', resolve('src/components'))
+            .set('@w', resolve('src/widgets'))
             .set('@v', resolve('src/views'))
     },
     configureWebpack: config => {
         if (isPro) {
             return {
-                plugins: [
-                    new CompressionWebpackPlugin({
-                        // 目标文件名称。[path] 被替换为原始文件的路径和 [query] 查询
-                        filename: '[path].gz[query]',
-                        // 使用 gzip 压缩
-                        algorithm: 'gzip',
-                        // 处理与此正则相匹配的所有文件
-                        test: new RegExp(
-                            '\\.(js|css)$'
-                        ),
-                        // 只处理大于此大小的文件
-                        threshold: 10240,
-                        // 最小压缩比达到 0.8 时才会被压缩
-                        minRatio: 0.8
-                    })
-                ]
+                plugins: [new CompressionWebpackPlugin({
+                    // 目标文件名称。[path] 被替换为原始文件的路径和 [query] 查询
+                    filename: '[path].gz[query]',
+                    // 使用 gzip 压缩
+                    algorithm: 'gzip',
+                    // 处理与此正则相匹配的所有文件
+                    test: new RegExp('\\.(js|css)$'),
+                    // 只处理大于此大小的文件
+                    threshold: 10240,
+                    // 最小压缩比达到 0.8 时才会被压缩
+                    minRatio: 0.8
+                })]
             }
         }
     },
