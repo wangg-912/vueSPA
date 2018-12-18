@@ -28,7 +28,7 @@
     "compression-webpack-plugin": "^2.0.0",
     "eslint": "^5.10.0",
     "eslint-plugin-vue": "^5.0.0",
-    "gang-wang-loading": "0.0.2",
+    "gang-wang-loading": "0.0.3",
     "mockjs": "^1.0.1-beta3",
     "vconsole": "^3.2.0",
     "vue-template-compiler": "^2.5.21"
