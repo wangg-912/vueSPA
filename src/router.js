@@ -1,10 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // 引入 Home 组件
-const Home = () => import('@v/Home.vue');
+/* const Home = () => import('@v/Home.vue'); */
+import Home from '@v/Home.vue'
+// 引入 Blog 组件
+import Blog from '@v/Blog.vue'
 
 // 引入 About 组件
-const About = () => import('@v/About.vue');
+import About from '@v/About.vue'
+
 
 Vue.use(Router)
 
@@ -23,6 +27,13 @@ let router = new Router({
     component: About,
     meta: {
       title: '关于我们'
+    }
+  }, {
+    path: '/blog',
+    name: 'blog',
+    component: Blog,
+    meta: {
+      title: '博客'
     }
   }]
 })

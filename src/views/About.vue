@@ -15,25 +15,22 @@ import Filters from "@@/Filters.vue";
 export default {
   data() {
     return {
-       str1: "",
-        str2: ""
+      str1: "",
+      str2: ""
+    };
+  },
+  filters: {
+    toUpperCase(val) {
+      return val.toUpperCase();
     }
   },
-  filters:{
-        toUpperCase(val){
-            return val.toUpperCase()
-        }
-    },
-  components: {
-    Filters
-  },
   created() {
-    this.showLoading()
+    this.showLoading();
     this.testApi();
   },
   methods: {
-    showLoading:function () {
-        this.$loading.show("我是王小小！");
+    showLoading: function() {
+      /* this.$loading.show("我是王小小！"); */
     },
     testApi() {
       this.$axios

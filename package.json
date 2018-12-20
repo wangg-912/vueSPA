@@ -14,7 +14,8 @@
     "browserslist": "^4.3.6",
     "vue": "^2.5.21",
     "vue-axios": "^2.1.4",
-    "vue-router": "^3.0.2"
+    "vue-router": "^3.0.2",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.2.0",
@@ -22,7 +23,7 @@
     "@vue/cli-plugin-unit-jest": "^3.2.0",
     "@vue/cli-service": "^3.2.0",
     "@vue/test-utils": "^1.0.0-beta.27",
-    "babel-core": "6.26.3",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "compression-webpack-plugin": "^2.0.0",
