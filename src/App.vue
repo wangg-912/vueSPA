@@ -3,6 +3,7 @@
     <div id="nav">
       <router-link to="/">首页</router-link>|
       <router-link to="/blog">博客</router-link>|
+      <router-link to="/puzzles">游戏</router-link>|
       <router-link to="/about">关于</router-link>
     </div>
     <router-view/>

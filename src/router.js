@@ -5,9 +5,9 @@ import Router from 'vue-router'
 import Home from '@v/Home.vue'
 // 引入 Blog 组件
 import Blog from '@v/Blog.vue'
-
 // 引入 About 组件
 import About from '@v/About.vue'
+import Puzzles from '@@/datas/DataView.vue'
 
 
 Vue.use(Router)
@@ -34,6 +34,13 @@ let router = new Router({
     component: Blog,
     meta: {
       title: '博客'
+    }
+  }, {
+    path: '/puzzles',
+    name: 'puzzles',
+    component: Puzzles,
+    meta: {
+      title: '数据驱动'
     }
   }]
 })
