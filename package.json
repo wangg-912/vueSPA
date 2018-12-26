@@ -12,6 +12,7 @@
     "autoprefixer": "^9.4.3",
     "axios": "^0.18.0",
     "browserslist": "^4.3.6",
+    "iview": "^3.2.1",
     "vue": "^2.5.21",
     "vue-axios": "^2.1.4",
     "vue-router": "^3.0.2",
